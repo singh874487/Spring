@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+	default-autowire="constructor"
+	default-autowire-candidates="myOffer1, myOffer2">
+
+
+<!-- for autowire by name , property names must match with the name specified in the bean class -->
+	<bean class="org.studyeasy.spring.BikeInsurance" id="myInsurance"
+		autowire="byName">
+
+	</bean>
+	
+	<bean name="currentCondition"
+		class="org.studyeasy.spring.Conditions">
+		<property name="condition" value="No Conditions, Its Diwali"></property>
+	</bean>
+	
+	
+	<!-- We can also use “id” instead of “name” attribute, will work properly -->
+	<bean id="currentOffer" class="org.studyeasy.spring.Offers">
+		<property name="offer"
+			value="Happy Diwali, 30% off on all products"></property>
+	</bean>
+	
+	
+	<!-- 
+		But while Spring scan then first it gives the preference to name attribute 
+		so first it will check name attribute , if it does not find then check id attribute
+	 -->
+
+
+</beans>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+
+	<bean id="myInsurance" class="org.studyeasy.spring.BikeInsurance">
+
+		<property name="currentOffer_1" value="No Current Offer"></property>
+		<property name="currentOffer_2" value="#{'No Offers'}"></property>
+		<property name="currentOffer_3" value="#{'Sum of 25 + 58 is : '+ 25+58}"></property>
+		<property name="currentOffer_4" value="#{'Sum of 25 + 58 is : '+ (25+58)}"></property>
+		
+		<property name="x" value="#{'Offers India '+offers.getOfferIndia()}"></property>
+		<property name="y" value="#{'Offers India '+offers.offerUS}"></property>
+		
+		<property name="z" value="#{34+99}"></property>
+		
+	</bean>
+	 
+	<bean id="offers" class="org.studyeasy.spring.OffersGenerator"></bean>
+	
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="org.studyeasy.spring.Offer" id="offerId"></bean>
+
+	<bean class="org.studyeasy.spring.BikeInsurance" id="bikeId">
+		<constructor-arg ref="offerId"></constructor-arg>
+	</bean>
+
+</beans>

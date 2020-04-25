@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="carId" class="org.studyeasy.spring.CarInsurance"></bean>
+
+
+	<!-- type and name parameter are optional however if we define these then 
+		the type and name should match with as defined in Entity class but if defining 
+		type and name then order is not so important -->
+
+	<bean class="org.studyeasy.spring.BikeInsurance" id="bikeId">
+		<constructor-arg value="Arun" type="java.lang.String"
+			name="name"></constructor-arg>
+			
+		<constructor-arg value="1000" type="int"
+			name="insuranceId"></constructor-arg>
+			
+		<property name="insuranceValidity" value="2025">
+		</property>
+		
+	</bean>
+ 
+
+</beans>

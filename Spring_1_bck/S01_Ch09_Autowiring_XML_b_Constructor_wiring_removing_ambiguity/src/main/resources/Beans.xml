@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="org.studyeasy.spring.BikeInsurance" id="myInsurance"
+		autowire="constructor">
+	</bean>
+
+
+	<!-- [This configuration will create problem] -->
+
+	<!-- <bean class="org.studyeasy.spring.Offer" id="myOffer1"></bean> <bean 
+		class="org.studyeasy.spring.Offer" id="myOffer2"></bean> -->
+
+
+
+	<!-- [ Solution-01- make the bean not eligible for auto wiring -->
+
+	<!-- </bean> <bean class="org.studyeasy.spring.Offer" id="myOffer1" autowire-candidate="false"></bean> 
+		<bean class="org.studyeasy.spring.Offer" id="myOffer2"></bean> -->
+
+
+
+	<!-- [ Solution-02 making a bean primary among all -->
+
+	<bean class="org.studyeasy.spring.Offer" id="myOffer1"></bean>
+	<bean class="org.studyeasy.spring.Offer" id="myOffer2"
+		primary="true"></bean>
+
+
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="myInsurance" class="org.studyeasy.spring.BikeInsurance"
+		autowire="byType">
+	</bean>
+
+	<bean id="xyzOffer" class="org.studyeasy.spring.Offers">
+		<property name="offer"
+			value="Happy Diwali, 30% off on all products"></property>
+	</bean>
+
+	<bean name="xyzCondition" class="org.studyeasy.spring.Conditions">
+		<property name="condition" value="No Conditions, Its Diwali"></property>
+	</bean>
+
+<!-- 	<bean name="abcCondition" class="org.studyeasy.spring.Conditions">
+		<property name="condition"
+			value="Good, No Conditions, Its Diwali"></property>
+	</bean> -->
+
+</beans>
